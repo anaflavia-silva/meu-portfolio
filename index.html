@@ -1,166 +1,415 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Meu Portfólio</title>
+   
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Portfólio</title>
-</head>
+   <!-- Tipografia estilo pôster + texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Canvas do “cordyceps” (fungo) em full-screen -->
+    <canvas id="cordyceps" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
 
-<body>
+    <a href="#conteudo" class="sr-only">Ir para o conteúdo principal</a>
 
-    <div class="particulas"></div>
+    <header role="banner" aria-label="Cabeçalho do portfólio">
+      <div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
+      <div class="container nav-wrap">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">&lt;/&gt;</span>
+          <span class="brand-text">Ana Flávia Silva</span>
+        </div>
+        <button
+          id="menu-toggle"
+          class="menu-btn"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="nav-list"
+        >
+          Menu
+        </button>
+        <nav aria-label="Navegação principal">
+          <ul id="nav-list" class="nav-list">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#formacao">Formação</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <div
+              class="nav-underline"
+              id="nav-underline"
+              aria-hidden="true"
+            ></div>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    <nav class="navegacao">
-        <ul class="menu">
-            <li>
-                <a href="#inicio" class="menu-link">Inicio</a>
+    <main id="conteudo">
+      <section class="hero reveal" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div>
+            <p class="kicker">Portfólio</p>
+            <h1 id="hero-title" class="title">
+              Olá, eu sou a <span class="accent">Ana Flávia</span>
+            </h1>
+            <p class="subtitle">
+              Técnica em Informática recém‑formada e iniciando graduação em
+              Análise e Desenvolvimento de Sistemas.
+            </p>
+            <p class="typing">
+              <span id="typewriter" aria-live="polite" aria-atomic="true"
+                >Front‑end com HTML, CSS e JavaScript</span
+              >
+              <span class="cursor" aria-hidden="true">|</span>
+            </p>
+            <div class="cta-row">
+              <a class="btn" href="#projetos">Ver Projetos</a>
+              <a class="btn-outline" id="link-cv" href="#" download
+                >Baixar CV</a
+              >
+            </div>
+          </div>
+          <div class="hero-media">
+            <figure class="polaroid">
+              <img
+                src="img/fotoperfil.jpg"
+                alt="Foto de perfil do desenvolvedor"
+                class="avatar"
+                width="300"
+                height="340"
+              />
+              <figcaption class="caption">HTML • CSS • JavaScript</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" class="reveal" aria-labelledby="sobre-title">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="sobre-title" class="section-title">Sobre mim</h2>
+            <p class="section-lead">
+              Interfaces funcionais e acessíveis com foco em semântica,
+              performance e experiência.
+            </p>
+          </div>
+          <div class="about-grid">
+            <article class="about-card glass">
+              <h3>O que faço</h3>
+              <p>
+                Crio páginas responsivas com HTML semântico, CSS organizado e
+                interatividade com JavaScript.
+              </p>
+            </article>
+            <article class="about-card glass">
+              <h3>Objetivo</h3>
+              <p>
+                Iniciar como desenvolvedor front‑end júnior e evoluir para
+                full‑stack ao longo da graduação em ADS.
+              </p>
+            </article>
+            <article class="about-card glass">
+              <h3>Valores</h3>
+              <p>
+                Código limpo, acessibilidade, colaboração e aprendizado
+                contínuo.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="habilidades"
+        class="reveal"
+        aria-labelledby="habilidades-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <h2 id="habilidades-title" class="section-title">Habilidades</h2>
+            <p class="section-lead">Ferramentas que domino no dia a dia</p>
+          </div>
+          <ul class="skills" role="list">
+            <li class="skill glass">
+              <span class="skill-badge">HTML</span>
+              <p class="skill-desc">
+                Estrutura semântica, acessibilidade e SEO básico
+              </p>
             </li>
-            <li>
-                <a href="#sobre" class="menu-link">Sobre </a>
+            <li class="skill glass">
+              <span class="skill-badge">CSS</span>
+              <p class="skill-desc">
+                Layout responsivo, Flexbox, Grid e microinterações
+              </p>
             </li>
-            <li>
-                <a href="#habilidades" class="menu-link">Habilidades</a>
+            <li class="skill glass">
+              <span class="skill-badge">JavaScript</span>
+              <p class="skill-desc">
+                DOM, eventos, fetch API e lógica de interface
+              </p>
             </li>
-            <li>
-                <a href="#projetos" class="menu-link">Projetos</a>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projetos" class="reveal" aria-labelledby="projetos-title">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="projetos-title" class="section-title">Projetos</h2>
+          </div>
+
+          <div class="cards">
+            <article class="proj glass" data-tilt>
+              <div class="thumb">
+                <div class="shine"></div>
+                Landing
+              </div>
+              <div class="proj-body">
+                <h3 class="proj-title">Landing Page Responsiva</h3>
+                <p class="proj-text">
+                  Acessibilidade, grid responsivo e componentes reutilizáveis.
+                </p>
+                <div class="proj-actions">
+                  <a
+                    class="link-btn"
+                    data-project="0"
+                    data-kind="demo"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Demo</a
+                  >
+                  <a
+                    class="link-btn-outline"
+                    data-project="0"
+                    data-kind="code"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Código</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="proj glass" data-tilt>
+              <div class="thumb">
+                <div class="shine"></div>
+                Dashboard
+              </div>
+              <div class="proj-body">
+                <h3 class="proj-title">Dashboard Simples</h3>
+                <p class="proj-text">
+                  Cards e indicadores atualizados via JavaScript.
+                </p>
+                <div class="proj-actions">
+                  <a
+                    class="link-btn"
+                    data-project="1"
+                    data-kind="demo"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Demo</a
+                  >
+                  <a
+                    class="link-btn-outline"
+                    data-project="1"
+                    data-kind="code"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Código</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="proj glass" data-tilt>
+              <div class="thumb">
+                <div class="shine"></div>
+                Formulário
+              </div>
+              <div class="proj-body">
+                <h3 class="proj-title">Formulário Validado</h3>
+                <p class="proj-text">
+                  Validações em tempo real e feedbacks focados em UX.
+                </p>
+                <div class="proj-actions">
+                  <a
+                    class="link-btn"
+                    data-project="2"
+                    data-kind="demo"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Demo</a
+                  >
+                  <a
+                    class="link-btn-outline"
+                    data-project="2"
+                    data-kind="code"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    >Código</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="formacao" class="reveal" aria-labelledby="formacao-title">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="formacao-title" class="section-title">Formação</h2>
+            <p class="section-lead">Minha jornada acadêmica</p>
+          </div>
+          <ol class="timeline" aria-label="Linha do tempo de formação">
+            <li class="tl-item glass" style="padding: 10px">
+              <div class="tl-dot" aria-hidden="true"></div>
+              <div>
+                <h3 class="tl-title">Técnico em Informática</h3>
+                <p class="tl-sub">Concluído • <span id="ano-tecnico"></span></p>
+                <p class="tl-text">
+                  Bases de hardware, redes, lógica de programação e
+                  desenvolvimento web.
+                </p>
+              </div>
             </li>
-            <li>
-                <a href="#contato" class="menu-link">Contato</a>
+            <li class="tl-item glass" style="padding: 10px">
+              <div class="tl-dot" aria-hidden="true"></div>
+              <div>
+                <h3 class="tl-title">
+                  Graduação em Análise e Desenvolvimento de Sistemas
+                </h3>
+                <p class="tl-sub">Cursando • <span id="ano-ads"></span></p>
+                <p class="tl-text">
+                  Estruturas de dados, engenharia de software, banco de dados e
+                  desenvolvimento de sistemas.
+                </p>
+              </div>
             </li>
-        </ul>
+          </ol>
+        </div>
+      </section>
 
-    </nav>
-    <main id="inicio" class="cabecalho">
+      <section id="contato" class="reveal" aria-labelledby="contato-title">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="contato-title" class="section-title">Contato</h2>
+            <p class="section-lead">
+              Vamos conversar sobre sua necessidade ou oportunidade
+            </p>
+          </div>
 
-        <img src="./img/eu.jpg" alt="Minha foto" class="foto-perfil">
-        <h1>Ana Flávia Silva</h1>
-        <p class="cabecalho-sob-titulo">Dev Front End Júnior</p>
+          <div class="contact-grid">
+            <form
+              id="contato-form"
+              class="glass"
+              aria-label="Formulário de contato"
+            >
+              <div class="row">
+                <label for="nome">Nome</label>
+                <input
+                  id="nome"
+                  name="nome"
+                  type="text"
+                  placeholder="Seu nome"
+                  required
+                />
+              </div>
+              <div class="row">
+                <label for="email">E‑mail</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="seu@email.com"
+                  required
+                />
+              </div>
+              <div class="row">
+                <label for="mensagem">Mensagem</label>
+                <textarea
+                  id="mensagem"
+                  name="mensagem"
+                  placeholder="Como posso ajudar?"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn">Enviar</button>
+                <button type="button" id="copiar-email" class="btn-outline">
+                  Copiar e‑mail
+                </button>
+              </div>
+              <p
+                id="form-feedback"
+                class="feedback"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
 
-
+            <aside class="contact glass" aria-label="Outras formas de contato">
+              <h3 style="margin: 0">Disponível para:</h3>
+              <ul>
+                <li>Estágios e posições júnior</li>
+                <li>Freelance front‑end</li>
+                <li>Colaborações em projetos</li>
+              </ul>
+              <div class="links">
+                <a
+                  class="link-btn"
+                  id="link-github"
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+                <a
+                  class="link-btn-outline"
+                  id="link-linkedin"
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+                <a class="link-btn-outline" id="link-email" href="#">E‑mail</a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
     </main>
-    <section id="sobre" class="sobre">
-        <h2 class="sobre-titulo">Sobre mim</h2>
-        <div class="sobre-caixa">
-            <p class="sobre-paragrafo">Olá! Meu nome é Ana Flávia, sou desenvolvedora Front-End apaixonada por criar
-                sites bonitos modernos e responsivos. Trabalho com HTML, CSS, JavaScript e React, e estou sempre em
-                busca de novos apredizados para melhorar minhas habilidades.</p>
-        </div>
-    </section>
 
-    <section id="habilidades" class="habilidades">
-        <h2 class="projetos-titulo">Minhas Habilidades</h2>
-        <div class="habilidades-icon">
-            <div class="skill">
-                <i class="fab fa-html5"></i>
-                <p>HTML5</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-css3-alt"></i>
-                <p>CSS3</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-js-square"></i>
-                <p>JavaScript</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-react"></i>
-                <p>React</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-mobile-alt"></i>
-                <p>Design Responsivo</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-git-alt"></i>
-                <p>Git</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-github"></i>
-                <p>GitHub</p>
-            </div>
+    <a
+      href="#conteudo"
+      class="btn to-top"
+      id="to-top"
+      aria-label="Voltar ao topo"
+      >Topo</a
+    >
 
-        </div>
+    <footer role="contentinfo" aria-label="Rodapé">
+      <p>© <span id="ano-rodape"></span> Ana Flávia Silva — Portfólio</p>
+    </footer>
 
-
-    </section>
-
-    <section id="projetos" class="projetos">
-        <h2 class="projetos-titulo"> Meus Projetos</h2>
-        <div class="projetos-caixa">
-            <a href="https://anaflavia-silva.github.io/cafeteria/" class="projeto-link">
-                <div class="projetos-card">
-                    <img src="./img/projeto1.png" alt="Projeto 1" class="projetos-imagem">
-                    <div class="caixa-textos-projetos">
-                        <h3 class="info-projetos"> Cafeteria </h3>
-                        <p class="paragrafo-projetos"> Site cafeteria</p>
-                    </div>
-                </div>
-
-            </a>
-
-
-            <a href="https://anaflavia-silva.github.io/fan-page/" class="projeto-link">
-                <div class="projetos-card">
-                    <img src="./img/projeto2.png" alt="Projeto 2" class="projetos-imagem">
-                    <div class="caixa-textos-projetos">
-                        <h3 class="info-projetos"> Fanpage </h3>
-                        <p class="paragrafo-projetos"> Site dedicado para fãs</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://anaflavia-silva.github.io/lanchonete/" class="projeto-link">
-                <div class="projetos-card">
-                    <img src="./img/projeto-3.png" alt="Projeto 3" class="projetos-imagem">
-                    <div class="caixa-textos-projetos">
-                        <h3 class="info-projetos"> Landing pange - Lanchonete</h3>
-                        <p class="paragrafo-projetos"> Site para restaurante</p>
-
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-    <section id="contatos" class="contatos">
-        <h2 class="contatos-titulo"> Entre em Contato</h2>
-
-        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
-            <div class="grupo-form">
-                <input placeholder="Nome" class="campo-form" id="nome">
-            </div>
-            <div class="grupo-form">
-                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
-            </div>
-
-            <button type="submit" class="botao-form"> Enviar WhatsApp</button>
-
-        </form>
-
-    </section>
-    <script>
-        function enviarWhats(event) {
-
-            event.preventDefault()
-
-            const nome = document.getElementById('nome').value;
-            const mensagem = document.getElementById('mensagem').value;
-            const telefone = '5512997631961'
-
-            const texto = `OLá! me chamo ${nome}, ${mensage}`
-            const msgFormatada = encodeURIComponent(texto)
-            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
-            window.open(url, '_blank')
-
-            console.log(url)
-
-
-        }
-
-
-    </script>
-</body>
-
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </body>
 </html>
